@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+            width: 500px;
+            padding: 5px;
+            border-collapse: collapse;
+            position: relative;
+        }
+        caption {
+            font-size: 1.5em;
+            padding: 10px;
+            background-color: rgba(46, 139, 86, 0.371);
+        }
+        thead > tr > th { /* Estilo para os cabeçalhos da tabela */
+            position: sticky;
+            top: 0;
+            background-color:  rgb(86, 86, 86);
+        }
+        tbody > tr:nth-child(2n) { /*2n = de 2 em 2 ou posso usar odd(impar) e even(par) */
+            background-color: rgba(250, 128, 114, 0.553);
+
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        thead, tfoot {
+            background-color: rgb(86, 86, 86);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minha primeira tabela</h1>
+    <!--CAPTION = legenda da tabela
+        
+        Anatomia para uma tabela:
+            TABLE = Tabela
+                TABLE ROW = "tr" = Linha da tabela
+                    TABLE HEADER = "th" = Cabeçalho da tabela
+                        TABLE DATA = "td" = Dado da tabela
+        
+        Anatomia para uma tabela grande:
+            TABLE = Tabela
+                THEAD = Cabeçalho da tabela
+                    TR = Linha do cabeçalho
+                        TH = Dado do cabeçalho
+                TBODY = Corpo da tabela
+                    TR = Linha do corpo
+                        TD = Dado do corpo
+                TFOOT = Rodapé da tabela
+                    TR = Linha do rodapé
+                        TD = Dado do rodapé                
+       -->
+
+    <table>
+        <caption>População dos Estados Brasileiros</caption>
+        <thead>
+            <tr>
+                <th>Estado</th>
+                <th>População</th>
+
+            </tr>
+    </thead>
+
+        <tbody>
+            <tr>
+                <td>São Paulo</td>
+                <td>45.919.049</td>
+            </tr>
+            <tr>
+                <td>Minas Gerais</td>
+                <td>21.292.666</td>
+            </tr>
+            <tr>
+                <td>Rio de Janeiro</td>
+                <td>17.366.189</td>
+            </tr>
+            <tr>
+                <td>Bahia</td>
+                <td>14.930.634</td>
+            </tr>
+            <tr>
+                <td>Paraná</td>
+                <td>11.597.484</td>
+            </tr>
+        </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>84.577.904</td>
+                </tr>
+      
+    </table>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis veniam velit maxime molestiae reprehenderit, sunt itaque? Veritatis sint, recusandae perferendis similique atque exercitationem dolores possimus officia suscipit magnam quas commodi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, exercitationem! Assumenda molestiae tempora fugit. Quia doloremque eum, tempore corrupti totam molestias eligendi eius nisi voluptatibus repellendus eaque veniam reprehenderit architecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur aliquid doloremque praesentium deleniti, aperiam beatae blanditiis expedita repudiandae iste dolore optio nisi. Accusamus, iusto? Ipsa ducimus corporis quis atque. Qui!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis veniam velit maxime molestiae reprehenderit, sunt itaque? Veritatis sint, recusandae perferendis similique atque exercitationem dolores possimus officia suscipit magnam quas commodi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, exercitationem! Assumenda molestiae tempora fugit. Quia doloremque eum, tempore corrupti totam molestias eligendi eius nisi voluptatibus repellendus eaque veniam reprehenderit architecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur aliquid doloremque praesentium deleniti, aperiam beatae blanditiis expedita repudiandae iste dolore optio nisi. Accusamus, iusto? Ipsa ducimus corporis quis atque. Qui!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis veniam velit maxime molestiae reprehenderit, sunt itaque? Veritatis sint, recusandae perferendis similique atque exercitationem dolores possimus officia suscipit magnam quas commodi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, exercitationem! Assumenda molestiae tempora fugit. Quia doloremque eum, tempore corrupti totam molestias eligendi eius nisi voluptatibus repellendus eaque veniam reprehenderit architecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur aliquid doloremque praesentium deleniti, aperiam beatae blanditiis expedita repudiandae iste dolore optio nisi. Accusamus, iusto? Ipsa ducimus corporis quis atque. Qui!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis veniam velit maxime molestiae reprehenderit, sunt itaque? Veritatis sint, recusandae perferendis similique atque exercitationem dolores possimus officia suscipit magnam quas commodi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, exercitationem! Assumenda molestiae tempora fugit. Quia doloremque eum, tempore corrupti totam molestias eligendi eius nisi voluptatibus repellendus eaque veniam reprehenderit architecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur aliquid doloremque praesentium deleniti, aperiam beatae blanditiis expedita repudiandae iste dolore optio nisi. Accusamus, iusto? Ipsa ducimus corporis quis atque. Qui!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis veniam velit maxime molestiae reprehenderit, sunt itaque? Veritatis sint, recusandae perferendis similique atque exercitationem dolores possimus officia suscipit magnam quas commodi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, exercitationem! Assumenda molestiae tempora fugit. Quia doloremque eum, tempore corrupti totam molestias eligendi eius nisi voluptatibus repellendus eaque veniam reprehenderit architecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur aliquid doloremque praesentium deleniti, aperiam beatae blanditiis expedita repudiandae iste dolore optio nisi. Accusamus, iusto? Ipsa ducimus corporis quis atque. Qui!</p>
+</body>
+</html>
