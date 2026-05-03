@@ -12,17 +12,34 @@
 </head>
 <body>
     <h1>Meu primeiro formulário</h1>
-    <form action="cadastro.php"> 
+
+    <form action="cadastro.php" method="post" autocomplete="on"> 
+        <!--
+        METHOD = Usar 'POST' quando for algum conteudo sensível que você não queira que apareca na "URL", se nao usar 'GET'!
+        -->
         <p>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" required size="12" placeholder="Nome do Usuário" autocomplete="username"> <!--
+            REQUIRED = se o campo não for preenchido, ele manda uma msg dixendo que o camp não foi preenchido
+
+            PLACEHOLDER = deixa um texto pré escrito
+
+            AUTOCOMPLETE = é para dizer que essa caixa é uma caixa de nome, senha, e-mail ..., mas para isso tenho que deixar o AUTOCOMPLETE ON na tegue 'form'
+            -->
         </p>
         <p>
             <label for="iSobrenome">Sobrenome:</label>
-            <input type="text" name="Sobrenome" id="iSobrenome">
+            <input type="text" name="Sobrenome" id="iSobrenome" required size="17" placeholder="Sobrenome do Usuário"> <!--
+            SIZE = a caixa tera um tamanho mínimo. Não afetra em nada somente no tamanho da caixa-->
+        </p>
+        <p>
+            <label for="isenha">Senha:</label>
+            <input type="password" name="Senha" id="isenha" required minlength="8" maxlength="20"> <!--
+            MINLENGTH = exige um número mínimo de caracter e MAXLENGTH = exige um número maximo de caracter-->
         </p>
         <p>
             <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
         </p>
     </form>
 </body>
