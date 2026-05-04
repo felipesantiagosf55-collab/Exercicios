@@ -7,11 +7,36 @@
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
-    <header>
-        <h1>Felipe Santos</h1>
-    </header>
+    <header>Felipe Santos</header>
     <main>
-        
+        <section>
+            <fieldset>
+                <h1>Agende seu Horário</h1>
+                <form action="cadsatro.php" method="get" autocomplete="on">
+                    <p>
+                        <label for="inome" ></label>
+                        <input type="text" name="Nome" id="inome" class="ajuste" required placeholder="Nome" autocomplete="name">
+                    </p>
+                    <p>
+                        <label for="iSobrenome"></label>
+                        <input type="text" name="Sobrenome" id="iSobrenome" class="ajuste" required placeholder="Sobrenome" autocomplete="nickname">
+                    </p>
+                    <p>
+                        <label for="ifone"></label>
+                        <input type="tel" name="fone" id="ifone" class="ajuste" required placeholder="(xx) x xxxx-xxxx" autocomplete="tel">
+                    </p>
+                    <p>
+                        <label for="idata"></label>
+                        <input type="date" name="data" id="idata" class="dma" required>
+                    </p>
+                    <p><input type="checkbox" name="datas" id="idatas"><label for="idatas" class="ntdata">Não tenho uma data</label></p>
+                    <p>
+                        <input type="reset" value="Limpar" class="botoes" id="limpar">
+                        <input type="submit" value="Enviar" class="botoes" id="enviar">
+                    </p>
+                </form>
+            </fieldset>
+        </section>
     </main>
 </body>
 </html>

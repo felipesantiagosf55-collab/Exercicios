@@ -2,37 +2,54 @@
 
  * {
     margin: 0px;
-    padding: opx;
+    padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
  }
-
-html {
-    background-color: rgb(109, 109, 109);
-    color: white;
-} 
 header {
+    background-color: black;
+    color: white;
+    padding: 30px;
     text-align: center;
-    padding: 15px;
-    padding-bottom: 45px;
-    border: 1px solid black;
-    margin: 10px ;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
-main {
-    margin: auto;
-    background-color: white;
-    height: 80vh;
+
+fieldset {
+    text-align: center;
+    height: 60vh;
     width: 80vw;
-}
-@media screen and (min-height: 50px) { 
-    main {
-        background: url(../imagens/Captura\ de\ tela05.png);
-        background-repeat: no-repeat;
-    }
-}
-@media screen and (min-height: 700px) {
-    main {
-        background-image: url(../imagens/Captura\ de\ tela04.png);
-        background-repeat: no-repeat;
-    }
+    margin: auto;
+    border-radius: 50px;
+    padding-top: 25px;
     
+}
+.ajuste {
+    text-align: center;
+    margin: 10px;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+.dma {
+    text-align: center;
+    margin: 10px;
+    padding: 17px 52px;
+    border-radius: 10px;
+}
+.ntdata {
+    padding: 05px;
+    margin-right: 36px;
+}
+.botoes {
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+}
+#limpar {
+    background-color: rgba(241, 44, 18, 0.819);
+}
+#enviar {
+    background-color: rgba(31, 213, 19, 0.83);
+}
+.idatas {
+    padding: 5px;
 }
