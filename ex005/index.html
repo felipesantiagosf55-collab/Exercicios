@@ -127,11 +127,11 @@
     <form action="cadastro.php" method="get" autocomplete="on">
         <p>
             <label for="in1">Numero 1:</label>
-            <input type="number" name="n1" id="in1" min="0" max="50" required oninput="isoma.innerHTMl = Number(in1.value) + Number(in2.value)">
+            <input type="number" name="n1" id="in1" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
         </p>
         <p>
             <label for="in2">Numero 2:</label>
-            <input type="number" name="n2" id="in2" min="0" max="50" required oninput="isoma.innerHTMl = Number(in1.value) + Number(in2.value)">
+            <input type="number" name="n2" id="in2" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
         </p>
         <p>
             <label for="isoma">Soma: </label>
@@ -143,5 +143,11 @@
         </p>
 
     </form>
+    <!-- <script defer>
+        isoma = document.getElementById("isoma");
+        in1 = document.getElementById("in1");
+        in2 = document.getElementById("in2");
+        console.log(isoma, in1, in2)
+    </script> -->
 </body>
 </html> 
