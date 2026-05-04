@@ -23,9 +23,16 @@ main {
     height: 80vh;
     width: 80vw;
 }
-@media screen  { min-height: 900px;{
-    background: url;
+@media screen and (min-height: 50px) { 
+    main {
+        background: url(../imagens/Captura\ de\ tela05.png);
+        background-repeat: no-repeat;
+    }
 }
-    b
+@media screen and (min-height: 700px) {
+    main {
+        background-image: url(../imagens/Captura\ de\ tela04.png);
+        background-repeat: no-repeat;
+    }
     
 }
