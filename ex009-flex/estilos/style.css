@@ -18,20 +18,30 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    text-align: center;
+    align-items: center; 
 }
 header > h1 {
-    margin: 10px;
+    margin: 5px 0px 10px 5px;
+    border: 1px dotted black;
+    flex: 0 0 200px;
+}
+#icon {
+    display: none;
 }
 nav {
-    margin: 20px 6px;
+    margin: 0px 5px 5px 0px;
+    border: 1px dotted black;
+    display: flex;
+    flex-flow: row wrap;
+    
 }
 
 a {
+    margin: 0px 5px 5px 5px;
     text-decoration: none;
     text-align: center;
     background-color: rgb(40, 39, 39);
-    padding: 15px;
+    padding: 10px;
     
     color: white;
     
