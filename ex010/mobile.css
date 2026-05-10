@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 580px) {
+    header, header > nav{
+        flex-flow: column wrap;
+    }
+
+    header > h1 {
+        flex-basis: 40px;
+    }
+
+    nav {
+        width: 90%;
+        display: none;
+    }
+    main {
+        width: 95%;
+        margin: auto;
+    }
+    
+    #icon {
+        background-color:  rgb(40, 39, 39);
+        color: white;
+        border-radius: 10px;
+        width: 88%;
+        display: block;
+        text-align: center;
+        padding: 8px;
+        margin: 5px;
+        cursor: pointer;
+        
+    }
+    #icon:hover {
+        background-color: rgb(100, 98, 98);
+        border: 2px solid white;
+        transition: background-color 0.5s;
+    }
+   
+}
+@media screen and (min-width: 580px) {
+    #icon {
+    display: none;
+}
+}

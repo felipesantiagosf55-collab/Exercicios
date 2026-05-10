@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="pr-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu FlexBox</title>
-    <link rel="stylesheet" href="estilos/style.css">
-    <link rel="stylesheet" href="mobie.css">
-    
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body onresize="mudouTamanho()">
     <header>
 
         <h1>Meu Menu</h1>
 
-        
+        <span id="icon" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
 
         <nav class="filho1" id="itens">
             <a href="#">Opção 1</a>
@@ -24,6 +24,7 @@
             <a href="#">Opção 6</a>
         </nav>
     </header>
+
     <main>
         <h2>Teste de FlexBox</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit assumenda repellat, in, amet cum nostrum facere delectus dicta esse beatae minus debitis corrupti unde, omnis vel sapiente rem magnam? Quidem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, facilis ab. Ea dolor laudantium aperiam sit deserunt provident veritatis animi. Sed consequuntur iusto perspiciatis ipsa accusantium necessitatibus magnam harum maiores. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque error id dolorum quae minima ipsum magnam adipisci totam. Eligendi corrupti minus nulla eius sequi odit expedita quidem! Excepturi, consequuntur neque.</p>
@@ -31,6 +32,24 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse labore error consequuntur dolorum amet? Eligendi sequi libero animi odio incidunt quas dicta, molestiae beatae eius molestias quisquam aliquid eaque fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatibus alias voluptatem debitis harum vitae veniam sit pariatur non et cumque totam delectus natus modi nemo, atque, quidem repellat ut.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi assumenda minus, aspernatur doloremque in consequuntur fugiat magni perferendis soluta. Qui voluptatum cum nihil dolores fuga mollitia dignissimos, quas tempora alias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ab, ipsum enim aperiam obcaecati sapiente quis dolores adipisci dolore quas accusamus iure deleniti eveniet ut labore expedita neque consequuntur commodi?</p>
     </main>
-    
+
+    <script>
+    function mudouTamanho() {
+        if (window.innerWidth >= 580){
+            itens.style.display = 'block'
+        } else {
+            itens.style.display = 'none'
+        }
+    }
+    function clickMenu() {
+        if (itens.style.display == 'block') {
+            itens.style.display = 'none'
+        }else {
+        itens.style.display = 'block'
+        }
+    }
+            
+           
+    </script>
 </body>
 </html>
