@@ -10,8 +10,11 @@
     <script>
        // window.alert('minha primeira mensagem!')  /*exibe uma msg*/
        // window.confirm('Você esta gostando de javascript') /*msg de Confirmação*/
-        var nome = window.prompt('Qual o seu nome?')/*msg com uma caixa para preencher*/
-        window.alert('Prazer ' + nome + '!')
+        var n1 = Number.parseFloat(window.prompt('Digite um numero?'))/*msg com uma caixa para preencher*/
+        var n2 = Number.parseFloat(window.prompt('Digite outro numero?'))
+        var s = n1 + n2 
+
+        window.alert('A soma dos numeros é: ' + s)
     </script>
 </body>
 </html>
