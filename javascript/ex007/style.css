@@ -6,7 +6,7 @@
 }
 
 body {
-    
+    background-color: aquamarine;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4em;
 }
@@ -27,15 +27,19 @@ h1, p {
 section {
     background-color: rgb(223, 222, 221);
     width: 500px;
-    text-align: center;
+    
     border-radius: 20px;
 }
 div#msg {
     padding-top: 20px;
 }
-div#foto img {
+img {
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin: 20px;
+    
+}
+div#msg p {
+    text-align: left;
 }
