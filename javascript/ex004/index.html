@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primero script</title>
+    <style>
+        div#area {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            background-color: aquamarine;
+            color: white;
+            height: 150px;
+            width: 200px;
+            display: flex;
+            flex-direction: row wrap;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px  0px  20px rgba(0, 0, 0, 0.627);
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="area">
+        Interaja....
+    </div>
+
+    <script>
+        var a = document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrou)
+        a.addEventListener('mouseout', saiu)
+        function clicar(){
+            a.innerText = 'Clicou'
+            a.style.background ='red'
+        }
+
+        function entrou(){
+            a.innerText = 'Entrou'
+        }
+
+        function saiu() {
+            a.innerText = 'Saiu'
+            a.style.background ='aquamarine'
+        }
+    </script>
+</body>
+</html>

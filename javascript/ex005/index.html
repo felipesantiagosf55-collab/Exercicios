@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primero script</title>
+    <style>
+       input {
+        width: 80px;
+        margin-left: -35px;
+       }
+       p {
+        margin-left: 50px;
+       } 
+       #res{
+        margin-left: -1px;
+       }
+    </style>
+</head>
+<body>
+    
+    
+        <p><input type="number" name="tn1" id="tn1"></p>
+
+         <p>+</p>
+
+        <p><input type="number" name="tn2" id="tn2"></p>
+
+        <p><input type="button" value="Somar" onclick="somar()"></p>
+
+        <p id="res"> Resultado</p>
+    
+    
+    <script>
+        function somar(){
+            var a = document.getElementById('tn1')
+            var b = document.getElementById('tn2')
+            var res = document.getElementById('res')    
+            var n1 = Number(a.value)
+            var n2 = Number(b.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é <strong>${s}</strong>`  
+        }
+        
+    </script>
+</body>
+</html>

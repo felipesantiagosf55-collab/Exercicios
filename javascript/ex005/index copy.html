@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Script</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+    <h1>Veja se você é brasilero ou estrangeiro</h1>
+    
+    <label for="pais">De que país você é </label>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="verificar" onclick="calcular()">
+
+    <p id="res"></p>
+    <script>
+        
+
+        function calcular(){
+            
+            var b = document.getElementById('pais')
+            var res = document.getElementById('res')
+            if ('b' == 'Brasileiro') {
+                res.innerText = `Você é brasileiro` 
+            } else {
+                res.innerText = `Você é estrangeiro` 
+            }
+            
+                   
+        }
+       
+    </script>
+</body>
+</html>
