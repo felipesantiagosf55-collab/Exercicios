@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+       .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+       .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+       .profile-section {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+       .photo-upload {
+            text-align: center;
+        }
+
+        #preview {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            display: none;
+        }
+
+       .placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+       .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+       .course-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+       .course-item h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+       .remove-btn {
+            background: #ff4757;
+            padding: 5px 10px;
+            font-size: 13px;
+            float: right;
+        }
+
+       .remove-btn:hover {
+            background: #e84118;
+        }
+
+        @media (max-width: 600px) {
+           .profile-section {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Portfólio</h1>
+        <p>Adicione sua foto e seus cursos abaixo</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>1. Sua Foto</h2>
+            <div class="profile-section">
+                <div class="photo-upload">
+                    <div id="photo-container">
+                        <div class="placeholder">Sem foto</div>
+                        <img id="preview" alt="Preview">
+                    </div>
+                    <input type="file" id="foto" accept="image/*">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Seu Nome:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>2. Seus Cursos</h2>
+            <div class="form-group">
+                <label>Nome do Curso:</label>
+                <input type="text" id="curso-nome" placeholder="Ex: JavaScript do Zero">
+            </div>
+            <div class="form-group">
+                <label>Instituição:</label>
+                <input type="text" id="curso-inst" placeholder="Ex: Udemy, Alura">
+            </div>
+            <div class="form-group">
+                <label>Descrição curta:</label>
+                <textarea id="curso-desc" placeholder="O que você aprendeu?"></textarea>
+            </div>
+            <button onclick="adicionarCurso()">Adicionar Curso</button>
+        </div>
+
+        <div class="card">
+            <h2>3. Preview do Portfólio</h2>
+            <div id="portfolio-preview">
+                <p style="text-align: center; color: #777;">Adicione cursos para vê-los aqui</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Preview da foto
+        document.getElementById('foto').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('preview').src = e.target.result;
+                    document.getElementById('preview').style.display = 'block';
+                    document.querySelector('.placeholder').style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        let cursos = [];
+
+        function adicionarCurso() {
+            const nome = document.getElementById('curso-nome').value;
+            const inst = document.getElementById('curso-inst').value;
+            const desc = document.getElementById('curso-desc').value;
+
+            if (!nome ||!inst) {
+                alert('Preencha pelo menos o nome e a instituição do curso!');
+                return;
+            }
+
+            cursos.push({ nome, inst, desc });
+            atualizarPreview();
+
+            // Limpar campos
+            document.getElementById('curso-nome').value = '';
+            document.getElementById('curso-inst').value = '';
+            document.getElementById('curso-desc').value = '';
+        }
+
+        function removerCurso(index) {
+            cursos.splice(index, 1);
+            atualizarPreview();
+        }
+
+        function atualizarPreview() {
+            const container = document.getElementById('portfolio-preview');
+            const nome = document.getElementById('nome').value || 'Seu Nome';
+
+            if (cursos.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #777;">Adicione cursos para vê-los aqui</p>';
+                return;
+            }
+
+            let html = `<h3 style="margin-bottom: 15px;">${nome}</h3>`;
+
+            cursos.forEach((curso, index) => {
+                html += `
+                    <div class="course-item">
+                        <button class="remove-btn" onclick="removerCurso(${index})">X</button>
+                        <h3>${curso.nome}</h3>
+                        <p><strong>${curso.inst}</strong></p>
+                        <p>${curso.desc}</p>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Atualiza nome em tempo real
+        document.getElementById('nome').addEventListener('input', atualizarPreview);
+    </script>
+</body>
+</html>

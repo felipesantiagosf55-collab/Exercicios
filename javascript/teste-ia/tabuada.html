@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            background: #6a11cb;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font: normal 16px Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            width: 400px;
+            margin: 30px auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #2575fc;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="number"]:focus {
+            border-color: #2575fc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #1a5ed9;
+            transform: scale(1.05);
+        }
+
+        #resultado {
+            background: #f5f7fa;
+            border-radius: 8px;
+            padding: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .linha-tabuada {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 17px;
+        }
+
+        .linha-tabuada:last-child {
+            border-bottom: none;
+        }
+
+        .erro {
+            color: #d93025;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gerador de Tabuada</h1>
+    </header>
+
+    <section>
+        <h2>Digite um número</h2>
+        <div class="input-area">
+            <input type="number" id="numero" placeholder="Ex: 7">
+            <button onclick="gerarTabuada()">Gerar</button>
+        </div>
+        <div id="resultado">
+            Digite um número acima e clique em Gerar para ver a tabuada
+        </div>
+    </section>
+
+    <script>
+        function gerarTabuada() {
+            let num = Number(document.getElementById('numero').value)
+            let res = document.getElementById('resultado')
+
+            if (document.getElementById('numero').value == '') {
+                res.innerHTML = '<div class="erro">⚠️ Digite um número primeiro!</div>'
+                return
+            }
+
+            res.innerHTML = `<strong>Tabuada do ${num}:</strong><br><br>`
+
+            for (let i = 1; i <= 10; i++) {
+                let resultado = num * i
+                res.innerHTML += `<div class="linha-tabuada">${num} x ${i} = ${resultado}</div>`
+            }
+        }
+
+        // Permite apertar Enter pra gerar
+        document.getElementById('numero').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                gerarTabuada()
+            }
+        })
+    </script>
+</body>
+</html>
