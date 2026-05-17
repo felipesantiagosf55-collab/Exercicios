@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabuada</title>
+    <style>
+        body {
+            background: fixed;
+            background-image: linear-gradient( #FADD00,#F1D500, #CFB700, #AD9900, #8B7B00, #695D00);
+            background-repeat: no-repeat; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.682);
+            width: 320px;
+            margin: auto;
+            border-radius: 20px;
+        }
+        section {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.76);
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        div#seltab {
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3em;
+            margin: auto;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        input#numero {
+            padding: 8px;
+            border-radius: 8px;
+        }
+        input#botao {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgb(77, 209, 77);
+        }
+        input#botao:hover {
+            cursor: pointer;
+            
+        }
+        option {
+            background-color: #c9c9c9;
+            letter-spacing: 3px;
+            text-align: left;
+            padding: 20px 10px 5px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.432);
+            
+        }
+
+    </style>
+</head>
+<body>
+    <header><h1>Tabuada</h1></header>
+    <section>
+        <div>
+            <p>Numero: <input type="number" name="numero" id="numero"> <input type="button" value="Gerar tabuada" onclick="tabuada()" id="botao"></p>
+        </div>
+        <div>
+            <div name="tabuada" id="seltab" size="8"></div>
+        </div>
+    </section>
+</body>
+<script>
+    function tabuada (){
+        var num = document.getElementById('numero')
+        var tab = document.getElementById('seltab')
+
+        if (num.value.length == 0){
+            alert(`[ERRO] por favor digite um numero`)
+        } else {
+            var n = Number(num.value)
+
+            tab.innerHTML = ''
+            for (var c = 1; c <= 10; c++) {
+                var item = document.createElement('option')
+                item.text = `${n} x ${c} = ${n*c}`
+                tab.appendChild(item)
+            }
+        }
+        
+    }
+</script>
+</html>

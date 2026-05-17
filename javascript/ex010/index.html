@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pr-br">
+<html lang="pr-br"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tabuada</title>
-    <style>
+    <title>Document</title>
+<style>
         body {
             background: fixed;
             background-image: linear-gradient( #FADD00,#F1D500, #CFB700, #AD9900, #8B7B00, #695D00);
@@ -12,25 +12,21 @@
             font-family: Arial, Helvetica, sans-serif;
         }
         header {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.682);
-            width: 320px;
+            text-align: center;   
             margin: auto;
-            border-radius: 20px;
         }
         section {
             text-align: center;
             background-color: rgba(255, 255, 255, 0.76);
-            width: 300px;
+            width: 400px;
             margin: auto;
             padding: 20px;
             border-radius: 20px;
         }
-        div#seltab {
-            border-radius: 10px;
-            text-align: center;
-            font-size: 1.3em;
-            margin: auto;
+        div > select {
+            width: 170px;
+            height: 150px;
+            
         }
         p {
             font-size: 1.2em;
@@ -38,6 +34,7 @@
         input#numero {
             padding: 8px;
             border-radius: 8px;
+            width: 90px;
         }
         input#botao {
             margin-top: 10px;
@@ -50,45 +47,99 @@
             
         }
         option {
-            background-color: #c9c9c9;
-            letter-spacing: 3px;
+            background-color: #e5e5e5;       
             text-align: left;
-            padding: 20px 10px 5px 20px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.432);
+            padding: 8px;
+            border-bottom: 2px dotted rgba(0, 0, 0, 0.432);
             
         }
 
     </style>
 </head>
 <body>
-    <header><h1>Tabuada</h1></header>
+    <header><h1>Analixador de Números</h1></header>
     <section>
         <div>
-            <p>Numero: <input type="number" name="numero" id="numero"> <input type="button" value="Gerar tabuada" onclick="tabuada()" id="botao"></p>
+            <p>Numero (entre 1 a 100): <input type="number" name="numero" id="numero"> <input type="button" value="Adicionar Número" onclick="adicionar()" id="botao"></p><br>
+            <select name="flista" id="flista" size="8" ></select><br>
+            <input type="button" value="Finalizar" onclick="finalizar()">
         </div>
-        <div>
-            <div name="tabuada" id="seltab" size="8"></div>
+
+        <div id="res">
+            
         </div>
+        
     </section>
 </body>
 <script>
-    function tabuada (){
-        var num = document.getElementById('numero')
-        var tab = document.getElementById('seltab')
+    let num = document.querySelector('input#numero')
+    let lista = document.getElementById('flista')
+    let res = document.getElementById('res')
+    let valores = []
 
-        if (num.value.length == 0){
-            alert(`[ERRO] por favor digite um numero`)
+    function isnumero(n) {
+        if (Number(n) >= 1 && Number(n) <= 100) {
+            return true
         } else {
-            var n = Number(num.value)
-
-            tab.innerHTML = ''
-            for (var c = 1; c <= 10; c++) {
-                var item = document.createElement('option')
-                item.text = `${n} x ${c} = ${n*c}`
-                tab.appendChild(item)
-            }
+            return false
         }
-        
     }
+
+    function islista(n, l) {
+        if (l.indexOf(Number(n)) != -1) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    function adicionar(){
+        if (isnumero(num.value) && !islista(num.value, valores)) {
+            valores.push(Number(num.value))
+            let item = document.createElement('option')
+            item.text = `Number ${num.value} adicionado`
+            lista.appendChild(item)
+            res.innerHTML = ''
+        } else {
+            alert('Número inválido ou já encontrado na lista')
+        }
+
+        num.value = '' //Deixa o meu input onde coloca o numero vazia
+        num.focus()    //volta o curso no meu input
+    }
+
+    function finalizar(){
+        if (valores.length == 0) {
+            alert('Adicione um valor antes de finalizar')
+        } else {
+            let total = valores.length
+            let maior = valores[0]
+            let menor = valores[0]
+            let soma = 0
+            let media = 0
+            
+            for(let pos in valores) {
+                soma += valores[pos]
+
+                if (valores[pos] > maior) 
+                    maior = valores[pos]
+                
+                
+                if (valores[pos] < menor) 
+                    menor = valores[pos]
+            }
+                media = soma / total
+
+                res.innerHTML = ''
+                res.innerHTML += `<p> Ao todo foram <strong>${total}</strong> números adicionados. </p>`
+                res.innerHTML += `<p> O maior número digitado foi <strong>${maior}</strong>. </p>`
+                res.innerHTML += `<p> O menor número digitado foi <strong>${menor}</strong>. </p>`
+                res.innerHTML += `<p> Somando todos os numeros, temos <strong>${soma}</strong>. </p>`
+                res.innerHTML += `<p> A média dos valore digitados é <strong>${media}</strong>. </p>`
+            }
+            
+
+}
+    
 </script>
 </html>
